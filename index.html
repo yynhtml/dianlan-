@@ -37,13 +37,11 @@
 				overflow: hidden;
 				width: 4.93rem;
 				border: 2px solid #eee;
-				position:relative;
 			}
 			.cont_box{
-				overflow:hidden;
-				position:absolute;
-				top:0;
-				width:100%;
+				overflow-x:hidden;
+				height:7.5rem;
+				overflow-y:scroll;
 			}
 			.cont_box li{
 				height: 1.5rem;
@@ -129,7 +127,7 @@
 				$(".cont_box li").click(function(){
 					var h = $(".cont_box li").outerHeight();
 					var index = $(this).index();
-					$(this).parent(".cont_box").animate({top:-h*(index-2)},200);
+					$(this).parent(".cont_box").animate({scrollTop:h*(index-2)},200);
 					$(this).addClass("sel");
 					$(this).siblings().removeClass("sel");
 				})
