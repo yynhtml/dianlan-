@@ -127,10 +127,10 @@
 				$(".cont_box li").click(function(){
 					var h = $(".cont_box li").outerHeight();
 					var index = $(this).index();
-					var st = h*(index-2);
-					st = st - parseInt(index/10)*5;
 					console.log(parseInt(index/10) + ";" + st);
-					$(this).parent(".cont_box").animate({scrollTop:st},200);
+					$(this).parent(".cont_box").animate({marginTop:-h},function(){
+						$(this).parent(".cont_box").append($(this).parent(".cont_box").find("li").eq(0));
+					});
 					$(this).addClass("sel");
 					$(this).siblings().removeClass("sel");
 				})
