@@ -125,9 +125,11 @@
 		<script type="text/javascript">
 			$(function(){
 				$(".cont_box li").click(function(){
-					var h = parseInt($(".cont_box li").outerHeight());
+					var h = parseInt($(".cont_box li").outerHeight()); 
+					var l = parseInt($(".cont_box li").length());
+					var H = parseInt($(".cont_box").outerHeight());
 					var index = $(this).index();
-					$(this).parent(".cont_box").animate({scrollTop:parseInt(h*(index-2))},200);
+					$(this).parent(".cont_box").animate({scrollTop:parseInt((H/l)*(index-2))},200);
 					$(this).addClass("sel");
 					$(this).siblings().removeClass("sel");
 				})
