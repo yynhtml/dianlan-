@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>首页</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.1.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<script src="js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			/*==============select==================*/
+			.box{
+				min-height: 100%;
+				width: 100%;
+				color: #333;
+				background: #f1f1f1;
+			}
+			
+			/*==============top=====================*/
+			.top{
+				overflow: hidden;
+			}
+			.cont{
+				float: left;
+				text-align: center;
+				margin: 0.1rem;
+			}
+			.cont h5{
+				font-size: 0.7rem;
+				line-height: 1.5rem;
+			}
+			.content{
+				height: 7.5rem;
+				overflow: hidden;
+				width: 4.93rem;
+				border: 2px solid #eee;
+			}
+			.cont_box{
+				height: 7.5rem;
+				overflow-x: hidden;
+				overflow-y: scroll;
+			}
+			.cont_box li{
+				height: 1.5rem;
+				line-height: 1.5rem;
+				text-align: center;
+				font-size: 0.6rem;
+				background: #fff;
+			}
+			.cont_box .sel{
+				background: #f60;
+				color: #fff;
+			}
+			.jiage{
+				padding: 1.5rem 0;
+				background: #fff;
+			}
+			.jiage p{
+				height: 1.5rem;
+				line-height: 1.5rem;
+				text-align: center;
+				font-size: 0.6rem;
+			}
+			.cang{
+				display: block;
+				height: 1.5rem;
+				width: 3rem;
+				margin: 0 auto;
+				background: #f60;
+				border-radius: 5px;
+				color: #fff;
+			}
+			
+			/*=================bottom======================*/
+			.bottom{
+				min-height: 1rem;
+				background: #fff;
+				clear: both;
+				margin-top: 1rem;
+				padding: 0 0.5rem;
+				display: none;
+			}
+			.bottom h4{
+				border-bottom: 1px solid #ccc;
+				font-size: 0.7rem;
+				overflow: hidden;
+			}
+			.bottom h4 span{
+				margin: 0 0.5rem;
+				display: block;float: left;
+				height: 1.5rem;
+				width: 2rem;
+				line-height: 1.5rem;
+			}
+			.bottom .del{
+				float: right;
+				background: url(img/del.png) no-repeat center;
+				background-size: auto 80%;
+			}
+			.bottom ul{
+				font-size: 0.6rem;
+				border-bottom: 1px solid #ccc;
+				padding: 0 0.5rem;
+			}
+			.bottom ul li{
+				height: 1.5rem;
+				line-height: 1.5rem;
+				letter-spacing: 2px;
+			}
+			.button{
+				height: 1.5rem;
+				width: 7rem;
+				text-align: center;
+				color: #fff;
+				line-height: 1.5rem;
+				margin: 0.5rem auto;
+				background: #f60;
+				font-size: 0.6rem;
+				border-radius: 5px;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				$(".cont_box li").click(function(){
+					var h = $(".cont_box li").outerHeight();
+					var index = $(this).index();
+					$(this).parent(".cont_box").animate({scrollTop:h*(index-2)},200);
+					$(this).addClass("sel");
+					$(this).siblings().removeClass("sel");
+				})
+				
+				
+				//获取数据
+				$(".cang").click(function(){
+					$(".bottom").css("display","block")
+					var arr = [$(".sel").eq(0).html(),$(".sel").eq(1).html(),$(".sel").eq(2).html(),$(".sel").eq(3).html(),$(".sel").eq(4).html()];
+					console.log(arr);
+					$(".shchu").eq(0).html(arr[3]);
+					$(".shchu").eq(1).html(arr[2]);
+					$(".shchu").eq(2).html(arr[0]);
+					$(".shchu").eq(3).html(arr[1]);
+					$(".shchu").eq(4).html(arr[4]);
+					$(".shchu").eq(5).html($(".danjia").html());
+				})
+				$(".del").click(function(){
+					$(".bottom").css("display","none");
+				})
+				$(".button").click(function(){
+					$(".bottom").css("display","none");
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="top">
+				<div class="cont">
+					<h5>系列</h5>
+					<div class="content">
+						<ul class="cont_box">
+							<li>1</li>
+							<li>2</li>
+							<li class="sel">3</li>
+							<li>4</li>
+							<li>5</li>
+							<li>6</li>
+							<li>7</li>
+							<li>8</li>
+							<li>9</li>
+							<li>10</li>
+							<li>11</li>
+							<li>12</li>
+							<li>13</li>
+							<li>14</li>
+							<li>15</li>
+							<li>16</li>
+							<li>17</li>
+							<li>18</li>
+							<li>19</li>
+							<li>20</li>
+						</ul>
+					</div>
+				</div>
+				<div class="cont">
+					<h5>电压</h5>
+					<div class="content">
+						<ul class="cont_box">
+							<li>1</li>
+							<li>2</li>
+							<li class="sel">3</li>
+							<li>4</li>
+							<li>5</li>
+							<li>6</li>
+							<li>7</li>
+							<li>8</li>
+							<li>9</li>
+							<li>10</li>
+							<li>11</li>
+							<li>12</li>
+							<li>13</li>
+							<li>14</li>
+							<li>15</li>
+							<li>16</li>
+							<li>17</li>
+							<li>18</li>
+							<li>19</li>
+							<li>20</li>
+						</ul>
+					</div>
+				</div>
+				<div class="cont">
+					<h5>结构</h5>
+					<div class="content">
+						<ul class="cont_box">
+							<li>1</li>
+							<li>2</li>
+							<li class="sel">3</li>
+							<li>4</li>
+							<li>5</li>
+							<li>6</li>
+							<li>7</li>
+							<li>8</li>
+							<li>9</li>
+							<li>10</li>
+							<li>11</li>
+							<li>12</li>
+							<li>13</li>
+							<li>14</li>
+							<li>15</li>
+							<li>16</li>
+							<li>17</li>
+							<li>18</li>
+							<li>19</li>
+							<li>20</li>
+						</ul>
+					</div>
+				</div>
+				<div class="cont">
+					<h5>型号</h5>
+					<div class="content">
+						<ul class="cont_box">
+							<li>1</li>
+							<li>2</li>
+							<li class="sel">3</li>
+							<li>4</li>
+							<li>5</li>
+							<li>6</li>
+							<li>7</li>
+							<li>8</li>
+							<li>9</li>
+							<li>10</li>
+							<li>11</li>
+							<li>12</li>
+							<li>13</li>
+							<li>14</li>
+							<li>15</li>
+							<li>16</li>
+							<li>17</li>
+							<li>18</li>
+							<li>19</li>
+							<li>20</li>
+						</ul>
+					</div>
+				</div>
+				<div class="cont">
+					<h5>规格</h5>
+					<div class="content">
+						<ul class="cont_box">
+							<li>1</li>
+							<li>2</li>
+							<li class="sel">3</li>
+							<li>4</li>
+							<li>5</li>
+							<li>6</li>
+							<li>7</li>
+							<li>8</li>
+							<li>9</li>
+							<li>10</li>
+							<li>11</li>
+							<li>12</li>
+							<li>13</li>
+							<li>14</li>
+							<li>15</li>
+							<li>16</li>
+							<li>17</li>
+							<li>18</li>
+							<li>19</li>
+							<li>20</li>
+						</ul>
+					</div>
+				</div>
+				<div class="cont">
+					<h5>价格</h5>
+					<div class="content">
+						<div class="jiage">
+							<p class="danjia">4.2</p>
+							<p>元/米</p>
+							<p><span class="cang">收藏</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bottom">
+				<h4><span class="shchu">型号</span><span class="shchu">结构</span><span class="del"></span></h4>
+				<ul>
+					<li>系列:<span class="shchu"></span></li>
+					<li>电压:<span class="shchu"></span></li>
+					<li>规格:<span class="shchu"></span></li>
+					<li>价格:<span class="shchu"></span></li>
+				</ul>
+				<p class="button">一键清除</p>
+			</div>
+		</div>
+	</body>
+</html>
