@@ -123,12 +123,10 @@
 		</style>
 		<script type="text/javascript">
 			$(function(){
-				$(".cont_box li").click(function(){
-					var h = $(".cont_box li").outerHeight();
-					var index = $(this).index();
-					$(this).parent(".cont_box").animate({scrollTop:h*(index-2)},200);
-					$(this).addClass("sel");
-					$(this).siblings().removeClass("sel");
+				$(".cont_box").onTouchEnd(function(){
+					var h = $(this).scrollTop();
+					console.log(h);
+					$("#text").html(h);
 				})
 				
 				
@@ -155,6 +153,7 @@
 	</head>
 	<body>
 		<div class="box">
+			<p id="text"></p>	
 			<div class="top">
 				<div class="cont">
 					<h5>系列</h5>
