@@ -125,11 +125,12 @@
 		<script type="text/javascript">
 			$(function(){
 				$(".cont_box li").click(function(){
-					var h = parseInt($(".cont_box li").outerHeight()); 
-					var l = parseInt($(".cont_box li").length());
-					var H = parseInt($(".cont_box").outerHeight());
+					var h = $(".cont_box li").outerHeight();
 					var index = $(this).index();
-					$(this).parent(".cont_box").animate({scrollTop:parseInt((H/l)*(index-2))},200);
+					var st = h*(index-2);
+					st = st - parseInt(index/10)*5;
+					console.log(parseInt(index/10) + ";" + st);
+					$(this).parent(".cont_box").animate({scrollTop:st},200);
 					$(this).addClass("sel");
 					$(this).siblings().removeClass("sel");
 				})
