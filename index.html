@@ -125,9 +125,9 @@
 		<script type="text/javascript">
 			$(function(){
 				$(".cont_box li").click(function(){
-					var h = $(".cont_box li").outerHeight();
+					var h = parseInt($(".cont_box li").outerHeight());
 					var index = $(this).index();
-					$(this).parent(".cont_box").animate({scrollTop:h*(index-2)},200);
+					$(this).parent(".cont_box").animate({scrollTop:parseInt(h*(index-2))},200);
 					$(this).addClass("sel");
 					$(this).siblings().removeClass("sel");
 				})
